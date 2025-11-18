@@ -1,0 +1,8 @@
+{
+  "jcrj.copy.recipe.json": "Copy Recipe JSON to Clipboard",
+  "jcrj.message.copy.recipe.copy.success": "The following recipe JSON was copied to the clipboard: %s",
+  "jcrj.message.copy.recipe.copy.failure": "Failed to copy the recipe JSON to the clipboard because the ID is unknown",
+  "jcrj.copy.item.id.format": "\"%s\"",
+  "jcrj.copy.item.id": "Copy Item ID to Clipboard",
+  "jcrj.message.copy.item.id.success": "The following item ID was copied to the clipboard: %s"
+}

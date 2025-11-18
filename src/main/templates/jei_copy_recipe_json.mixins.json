@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.yiran.jcrj.core.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "jei_copy_recipe_json.refmap.json",
+  "mixins": [
+    "RecipeLayoutUserInputHandlerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
