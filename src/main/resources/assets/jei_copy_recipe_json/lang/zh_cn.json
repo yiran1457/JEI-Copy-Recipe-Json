@@ -4,5 +4,6 @@
   "jcrj.message.copy.recipe.copy.failure": "复制配方 JSON 到剪贴板失败，因为配方 ID 未知",
   "jcrj.copy.item.id.format": "\"%s\"",
   "jcrj.copy.item.id": "复制物品 ID 到剪切板",
+  "jcrj.show.item.info": "[KJS] 查询物品信息",
   "jcrj.message.copy.item.id.success": "以下物品 ID 已复制到剪贴板: %s"
 }

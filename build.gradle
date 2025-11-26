@@ -134,6 +134,13 @@ mixin {
 
 dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    //2001.2.3-build.10
+    modImplementation("curse.maven:rhino-416294:6186971")
+    //v9.2.14
+    modImplementation("curse.maven:architectury-api-419699:5137938")
+    //2001.6.5-build.16
+    modImplementation("curse.maven:kubejs-238086:5853326")
 }
 
 jar {

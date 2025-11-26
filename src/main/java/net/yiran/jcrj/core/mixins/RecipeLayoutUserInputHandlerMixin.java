@@ -13,8 +13,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.server.ServerLifecycleHooks;
-import net.yiran.jcrj.JEICopyRecipeJson;
-import net.yiran.jcrj.core.Test;
+import net.yiran.jcrj.KeyMappingUtil;
+import net.yiran.jcrj.core.ICopyJsonHandler;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -34,7 +34,7 @@ public class RecipeLayoutUserInputHandlerMixin<R> {
     @Inject(method = "handleUserInput", at = @At(value = "INVOKE", target = "Lmezz/jei/common/Internal;getKeyMappings()Lmezz/jei/common/input/IInternalKeyMappings;"), cancellable = true)
     private void test(Screen screen, UserInput input, IInternalKeyMappings keyBindings, CallbackInfoReturnable<Optional<IUserInputHandler>> cir) {
         InputConstants.Key key = input.getKey();
-        if(!JEICopyRecipeJson.KEYMAPPING.isActiveAndMatches(key)) {
+        if(!KeyMappingUtil.KEYMAPPING.isActiveAndMatches(key)) {
             return;
         }
         boolean simulate = input.isSimulate();
@@ -51,7 +51,7 @@ public class RecipeLayoutUserInputHandlerMixin<R> {
         R recipe = recipeLayout.getRecipe();
         ResourceLocation registryName = recipeCategory.getRegistryName(recipe);
         if (registryName != null) {
-            Test.handler(server, minecraft, registryName);
+            ICopyJsonHandler.handler(server, minecraft, registryName);
             cir.setReturnValue(Optional.of((IUserInputHandler) this));
             return;
         }
