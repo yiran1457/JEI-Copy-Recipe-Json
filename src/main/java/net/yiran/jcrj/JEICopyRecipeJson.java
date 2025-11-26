@@ -16,7 +16,7 @@ public class JEICopyRecipeJson {
     private static final Logger LOGGER = LogUtils.getLogger();
     public JEICopyRecipeJson() {
         if(FMLEnvironment.dist == Dist.CLIENT) {
-            FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientHandle::registerKeyMappings);
+            FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientHandler::registerKeyMappings);
             MinecraftForge.EVENT_BUS.register(CopyItemHandler.class);
         }
     }

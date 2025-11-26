@@ -5,7 +5,7 @@ import net.minecraft.client.KeyMapping;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.fml.ModList;
 
-public class ClientHandle {
+public class ClientHandler {
     public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
         event.register(KeyMappingUtil.KEYMAPPING = new KeyMapping(
                 "jcrj.copy.recipe.json",
