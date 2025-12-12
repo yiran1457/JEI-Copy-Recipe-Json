@@ -121,9 +121,6 @@ repositories {
         url 'https://cursemaven.com'
     }
 }
-dependencies {
-    modImplementation("curse.maven:jei-238222:6600311")
-}
 
 // Uncomment the lines below if you wish to configure mixin. The mixin file should be named modid.mixins.json.
 
@@ -134,6 +131,9 @@ mixin {
 
 dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
+    modImplementation("curse.maven:jei-238222:6600311")
+    modCompileOnly("curse.maven:emi-580555:6420945")
 
     //2001.2.3-build.10
     modImplementation("curse.maven:rhino-416294:6186971")
