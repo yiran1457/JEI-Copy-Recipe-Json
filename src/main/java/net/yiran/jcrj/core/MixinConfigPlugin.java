@@ -1,8 +1,5 @@
 package net.yiran.jcrj.core;
 
-import dev.emi.emi.platform.EmiMain;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.ModLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -24,6 +21,8 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
     private static boolean isModLoaded(String className) {
         try {
+            //Class.forName(className);
+            //Thread.currentThread().getContextClassLoader().loadClass(className);
             Class.forName(className, false, MixinConfigPlugin.class.getClassLoader());
             return true;
         } catch (ClassNotFoundException e) {
@@ -33,7 +32,10 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return isModLoaded(targetClassName);
+        if (targetClassName == "dev.emi.emi.screen.EmiScreenManager") {
+            return isModLoaded(targetClassName);
+        }
+        return true;
     }
 
     @Override
@@ -43,7 +45,7 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
     @Override
     public List<String> getMixins() {
-        return List.of();
+        return null;
     }
 
     @Override

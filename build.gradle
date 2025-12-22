@@ -125,7 +125,7 @@ repositories {
 // Uncomment the lines below if you wish to configure mixin. The mixin file should be named modid.mixins.json.
 
 mixin {
-    add sourceSets.main, "${mod_id}.refmap.json"
+    //add sourceSets.main, "${mod_id}.refmap.json"
     config "${mod_id}.mixins.json"
 }
 
@@ -133,7 +133,7 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     modImplementation("curse.maven:jei-238222:6600311")
-    modCompileOnly("curse.maven:emi-580555:6420945")
+    modCompileOnly("curse.maven:emi-580555:6362010")
 
     //2001.2.3-build.10
     modImplementation("curse.maven:rhino-416294:6186971")
